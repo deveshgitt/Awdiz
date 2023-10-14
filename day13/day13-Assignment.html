@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>day 13</title>
+    </head>
+
+    <style>
+        #div0{
+            width: 100%;
+            height: 100px;
+            border: 1px solid red;
+            font-size: 30px;
+        }
+        #div1{
+            overflow: visible;
+            margin-bottom: 100px
+        }
+        #div2{
+            overflow:hidden;
+            margin-bottom: 10px
+        }
+        #div3{
+            overflow: scroll;
+            margin-bottom: 10px
+        }
+        #div4{
+            overflow: auto;
+            margin-bottom: 10px
+        }
+        img{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <body>
+        <!--tesing overflow  -->
+        <!-- <div id="div0">
+
+
+        <div id="div1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel obcaecati fugit repellendus. Illum, cumque consequuntur? Accusantium explicabo, aut blanditiis maiores, voluptatum odit amet nulla placeat necessitatibus quae quidem mollitia facere vero temporibus iusto hic quisquam facilis doloremque qui. Repudiandae, et! Quia impedit incidunt vitae provident possimus magni ex sed nostrum qui culpa illum, voluptatem ab!</div>
+
+        <div id="div2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel obcaecati fugit repellendus. Illum, cumque consequuntur? Accusantium explicabo, aut blanditiis maiores, voluptatum odit amet nulla placeat necessitatibus quae quidem mollitia facere vero temporibus iusto hic quisquam facilis doloremque qui. Repudiandae, et! Quia impedit incidunt vitae provident possimus magni ex sed nostrum qui culpa illum, voluptatem ab!</div>
+
+        <div id="div3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel obcaecati fugit repellendus. Illum, cumque consequuntur? Accusantium explicabo, aut blanditiis maiores, voluptatum odit amet nulla placeat necessitatibus quae quidem mollitia facere vero temporibus iusto hic quisquam facilis doloremque qui. Repudiandae, et! Quia impedit incidunt vitae provident possimus magni ex sed nostrum qui culpa illum, voluptatem ab!</div>
+
+        <div id="div4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel obcaecati fugit repellendus. Illum, cumque consequuntur? Accusantium explicabo, aut blanditiis maiores, voluptatum odit amet nulla placeat necessitatibus quae quidem mollitia facere vero temporibus iusto hic quisquam facilis doloremque qui. Repudiandae, et! Quia impedit incidunt vitae provident possimus magni ex sed nostrum qui culpa illum, voluptatem ab!</div>
+
+        <img src="data:image/jpeg;base64,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" alt="">
+        </div> -->
+<!-- 
+        <div style="width: 100%; border: 3px solid black; text-align: center;">jfhjhdgkslgkfsldkjg 
+            <div style="width: 50%; border: 3px solid blue ; text-align: left;">fvfbgfvvvvvvvvvvv
+
+        </div></div>  -->
+
+        <div style="display: flex; justify-content: space-evenly;">
+        <div style="border: 1px solid red;">1</div>
+        <div style="border: 1px solid red;">2</div>
+        </div>
+
+        <div style="display: flex; justify-content: space-around;">
+        <div style="border: 1px solid red;">1</div>
+        <div style="border: 1px solid red;">2</div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between;">
+        <div style="border: 1px solid red;">1</div>
+        <div style="border: 1px solid red;">2</div>
+        </div><br><br>
+
+        <div style="display: flex; flex-direction: column;">
+            <div style="border: 1px solid red;">1</div>
+            <div style="border: 1px solid red;">2</div>
+            <div style="border: 1px solid red;">3</div>
+            <div style="border: 1px solid red;">4</div>
+            <div style="border: 1px solid red;">5</div>
+            <div style="border: 1px solid red;">6</div>
+        </div><br><br>
+
+        <div style="display: flex; flex-direction: column-reverse;">
+            <div style="border: 1px solid red;">1</div>
+            <div style="border: 1px solid red;">2</div>
+            <div style="border: 1px solid red;">3</div>
+            <div style="border: 1px solid red;">4</div>
+            <div style="border: 1px solid red;">5</div>
+            <div style="border: 1px solid red;">6</div>
+        </div><br><br>
+
+        <div style="display: flex; flex-direction: row;">
+            <div style="border: 1px solid red;">1</div>
+            <div style="border: 1px solid red;">2</div>
+            <div style="border: 1px solid red;">3</div>
+            <div style="border: 1px solid red;">4</div>
+            <div style="border: 1px solid red;">5</div>
+            <div style="border: 1px solid red;">6</div>
+        </div><br><br>
+
+        <div style="display: flex; flex-direction: row-reverse;">
+            <div style="border: 1px solid red;">1</div>
+            <div style="border: 1px solid red;">2</div>
+            <div style="border: 1px solid red;">3</div>
+            <div style="border: 1px solid red;">4</div>
+            <div style="border: 1px solid red;">5</div>
+            <div style="border: 1px solid red;">6</div>
+        </div><br><br>
+        
+        <div style="display: flex;">
+            <div style="border: 1px solid red;width: 30%;">1</div>
+            <div style="border: 1px solid red;width: 30%;">2</div>
+            <div style="border: 1px solid red;width: 30%;">3</div>
+            <div style="border: 1px solid red;width: 30%;">4</div>
+            <div style="border: 1px solid red;width: 30%;">5</div>
+            <div style="border: 1px solid red;width: 30%;">6</div>
+        </div><br><br>
+
+        <div style="display: flex; flex-wrap: wrap;">
+            <div style="border: 1px solid red;width: 30%;">1</div>
+            <div style="border: 1px solid red;width: 30%;">2</div>
+            <div style="border: 1px solid red;width: 30%;">3</div>
+            <div style="border: 1px solid red;width: 30%;">4</div>
+            <div style="border: 1px solid red;width: 30%;">5</div>
+            <div style="border: 1px solid red;width: 30%;">6</div>
+        </div><br><br>
+
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-evenly;">
+            <div style="border: 1px solid red;width: 30%;">1</div>
+            <div style="border: 1px solid red;width: 30%;">2</div>
+            <div style="border: 1px solid red;width: 30%;">3</div>
+            <div style="border: 1px solid red;width: 30%;">4</div>
+            <div style="border: 1px solid red;width: 30%;">5</div>
+            <div style="border: 1px solid red;width: 30%;">6</div>
+        </div><br><br>
+
+        <div style="max-width: 700px; border: 1px solid red; height: 300px;"></div>
+
+    </body>
+</html>
